@@ -1,0 +1,21 @@
+<div
+  class="upload-box"
+  [class.dragging]="isDragging"
+  (drop)="onDrop($event)"
+  (dragover)="onDragOver($event)"
+  (dragleave)="onDragLeave($event)"
+  (click)="fileInput.click()"
+>
+  <input
+    #fileInput
+    type="file"
+    multiple
+    (change)="onFileChange($event)"
+    accept=".txt,.doc,.docx,.pdf"
+    hidden
+  />
+  <p>
+    Click to upload or drag and drop<br>
+    <small>.txt, .doc, .docx, .pdf up to 10MB (5 files max)</small>
+  </p>
+</div> 

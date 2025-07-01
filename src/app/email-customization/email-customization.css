@@ -1,0 +1,151 @@
+.email-customization-container {
+  max-width: 540px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 32px 28px 24px 28px;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2d3a4a;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+label {
+  font-weight: 500;
+  color: #374151;
+  display: block;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  background: #f9fafb;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+.tone-options,
+.length-options,
+.guidance-options,
+.toggle-group {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.tone-options label,
+.length-options label,
+.guidance-options label,
+.toggle-group label {
+  font-weight: 400;
+  color: #374151;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.preview-box {
+  background: #f3e8ff;
+  color: #6d28d9;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 8px;
+  font-size: 0.98rem;
+}
+
+.upload-box {
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  background: #f9fafb;
+  padding: 24px 0;
+  text-align: center;
+  color: #6b7280;
+  cursor: pointer;
+  margin-bottom: 6px;
+}
+
+.upload-box input[type="file"] {
+  display: none;
+}
+
+.upload-box p {
+  margin: 0;
+  font-size: 0.97rem;
+}
+
+textarea {
+  min-height: 38px;
+  resize: vertical;
+}
+
+.button-group {
+  display: flex;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.save-btn, .preview-btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.save-btn {
+  background: #0e766e;
+  color: #fff;
+}
+
+.save-btn:hover {
+  background: #115e59;
+}
+
+.preview-btn {
+  background: #fff;
+  color: #0e766e;
+  border: 1.5px solid #0e766e;
+}
+
+.preview-btn:hover {
+  background: #f0fdfa;
+}
+
+.hint {
+  color: #9ca3af;
+  font-size: 0.93rem;
+  margin-left: 2px;
+}

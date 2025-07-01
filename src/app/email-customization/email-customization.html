@@ -1,0 +1,97 @@
+<div class="email-customization-container">
+  <h2 class="title">Customize Your Email Assistant</h2>
+  <p class="subtitle">
+    Personalize how your AI assistant drafts welcome emails to new clients.<br>
+    All messages will be reviewed by you before sending.
+  </p>
+
+  <!-- Assistant Signature Style -->
+  <div class="form-group">
+    <label for="signatureStyle">Assistant Signature Style</label>
+    <select id="signatureStyle" [(ngModel)]="signatureStyle">
+      <option value="personal">Personal &amp; Warm</option>
+      <option value="professional">Professional</option>
+      <option value="concise">Concise</option>
+    </select>
+    <small class="hint">"Warmly, Assistant on behalf of Dr. Smith"</small>
+  </div>
+
+  <!-- Greeting Tone -->
+  <div class="form-group">
+    <label>Greeting Tone</label>
+    <div class="tone-options">
+      <label><input type="radio" name="tone" [(ngModel)]="greetingTone" value="friendly"> Friendly</label>
+      <label><input type="radio" name="tone" [(ngModel)]="greetingTone" value="supportive"> Supportive</label>
+      <label><input type="radio" name="tone" [(ngModel)]="greetingTone" value="straightforward"> Straightforward</label>
+    </div>
+    <div class="preview-box">
+      <strong>Preview:</strong> {{ getGreetingPreview() }}
+    </div>
+  </div>
+
+  <!-- Message Length Preference -->
+  <div class="form-group">
+    <label>Message Length Preference</label>
+    <div class="length-options">
+      <label><input type="radio" name="length" [(ngModel)]="messageLength" value="brief"> Brief (2–3 sentences max)</label>
+      <label><input type="radio" name="length" [(ngModel)]="messageLength" value="moderate"> Moderate (1–2 short paragraphs)</label>
+      <label><input type="radio" name="length" [(ngModel)]="messageLength" value="detailed"> Detailed (3–4 paragraphs with onboarding info)</label>
+    </div>
+  </div>
+
+  <!-- Guidance Prompts -->
+  <div class="form-group">
+    <label>Guidance Prompts</label>
+    <div class="guidance-options">
+      <label><input type="checkbox" [(ngModel)]="guidancePrompts.welcome"> A warm welcome</label>
+      <label><input type="checkbox" [(ngModel)]="guidancePrompts.booking"> Booking instructions</label>
+      <label><input type="checkbox" [(ngModel)]="guidancePrompts.reminder"> Reminder to complete intake form</label>
+      <label><input type="checkbox" [(ngModel)]="guidancePrompts.expect"> What to expect in therapy</label>
+      <label><input type="checkbox" [(ngModel)]="guidancePrompts.faqs"> FAQs (insurance, timing, etc.)</label>
+    </div>
+  </div>
+
+  <!-- Language & Accessibility -->
+  <div class="form-group">
+    <label>Language &amp; Accessibility</label>
+    <div class="toggle-group">
+      <label>
+        Use plain, human-friendly language
+        <input type="checkbox" [(ngModel)]="plainLanguage">
+      </label>
+      <label>
+        Write at ~8th grade reading level
+        <input type="checkbox" [(ngModel)]="gradeLevel">
+      </label>
+    </div>
+    <label for="spanishDraft">Draft in Spanish (Beta)</label>
+    <select id="spanishDraft" [(ngModel)]="spanishDraft">
+      <option value="none">Not enabled</option>
+      <option value="enabled">Enabled</option>
+    </select>
+  </div>
+
+  <!-- Upload Writing Samples -->
+  <div class="form-group">
+    <label>Upload Writing Samples</label>
+    <div class="upload-box">
+      <file-upload (filesSelected)="onFileChange($event)"></file-upload>
+    </div>
+  </div>
+
+  <!-- Add Your Preferences -->
+  <div class="form-group">
+    <label for="preferences">Add Your Preferences</label>
+    <textarea id="preferences" rows="2" [(ngModel)]="preferences" placeholder="Always mention that I offer virtual care... or Don't refer to therapy as 'treatment'..."></textarea>
+  </div>
+  <div class="form-group">
+    <label for="specifics">Anything specific you'd like the assistant to include or avoid?</label>
+    <textarea id="specifics" rows="2" [(ngModel)]="specifics"></textarea>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="button-group">
+    <button class="save-btn" (click)="savePreferences()">Save Preferences</button>
+    <button class="preview-btn" (click)="previewDraft()">Preview Draft Example</button>
+  </div>
+</div>
