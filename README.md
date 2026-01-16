@@ -65,6 +65,14 @@ This workspace includes a shared MCP configuration for Slack in `.vscode/mcp.jso
 
 Optional: set `SLACK_CHANNEL_IDS` in your environment to restrict access to a comma-separated list of channel IDs.
 
+### Accessing Slack history
+
+Use your MCP client to call the Slack tools:
+
+1. `slack_list_channels` to fetch channel IDs (optional `limit`).
+2. `slack_get_channel_history` with `channel_id` and optional `limit` to fetch recent messages.
+3. `slack_get_thread_replies` with `channel_id` and `thread_ts` to fetch a thread's replies.
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
