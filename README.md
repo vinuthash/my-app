@@ -54,6 +54,17 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
+## Slack MCP integration
+
+This workspace includes a shared MCP configuration for Slack in `.vscode/mcp.json`.
+
+1. Create a Slack app and add these scopes: `channels:history`, `channels:read`, `chat:write`, `reactions:write`, `users:read`, `users.profile:read`.
+2. Install the app to your workspace and copy the Bot User OAuth token (starts with `xoxb-`).
+3. Find your Slack Team ID (starts with `T`).
+4. When prompted by your MCP host (VS Code/Cursor), provide the token and team ID.
+
+Optional: set `SLACK_CHANNEL_IDS` in your environment to restrict access to a comma-separated list of channel IDs.
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

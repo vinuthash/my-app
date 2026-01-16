@@ -1,0 +1,25 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "slack_bot_token",
+      "description": "Slack Bot Token (starts with xoxb-)",
+      "password": true
+    },
+    {
+      "type": "promptString",
+      "id": "slack_team_id",
+      "description": "Slack Team ID (starts with T)"
+    }
+  ],
+  "servers": {
+    "slack": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-slack"],
+      "env": {
+        "SLACK_BOT_TOKEN": "${input:slack_bot_token}",
+        "SLACK_TEAM_ID": "${input:slack_team_id}"
+      }
+    }
+  }
+}
